@@ -7,11 +7,12 @@ import lxml.html
 print("Hello")
 # # Read in a page
 html = scraperwiki.scrape("http://foo.com")
+#This line shows the content of the website 
 print(html)
 #
 # # Find something on the page using css selectors
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
+root = lxml.html.fromstring(html)
+print(root.cssselect("div[align='left']"))
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
