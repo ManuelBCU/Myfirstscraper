@@ -10,17 +10,22 @@ html = scraperwiki.scrape("http://foo.com")
 #This line shows the content of the website 
 print(html)
 #
+record = ()
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 print(root.cssselect("div#footer"))
 print(root)
 listofmatches = root.cssselect("a")
 for match in listofmatches:
+  record["link"] = lxml.html.tostring(match)
+  print(record)
+  scrapewiki.sqlite.save(unique_keys=['record'], data={"name": "susan", "occupation": "software developer"})
   print(match)
   print(lxml.html.tostring(match))
+  
 #
 # # Write out to the sqlite database using scraperwiki library
-# scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
