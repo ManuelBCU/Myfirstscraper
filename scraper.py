@@ -14,6 +14,7 @@ print(html)
 root = lxml.html.fromstring(html)
 print(root.cssselect("div#footer"))
 print(root)
+listofmatches = root.cssselect("a")
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
