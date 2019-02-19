@@ -1,6 +1,6 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
-# The next line import the scraperwiki library
+# The next line imports the scraperwiki library
 # import scraperwiki
 # import lxml.html
 #
