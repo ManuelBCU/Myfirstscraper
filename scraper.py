@@ -10,7 +10,7 @@ html = scraperwiki.scrape("http://foo.com")
 #This line shows the content of the website 
 print(html)
 #
-record = ()
+record = {}
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 print(root.cssselect("div#footer"))
