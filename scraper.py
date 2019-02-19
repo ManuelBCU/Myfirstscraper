@@ -19,13 +19,13 @@ listofmatches = root.cssselect("a")
 for match in listofmatches:
   record["link"] = lxml.html.tostring(match)
   print(record)
-  scrapewiki.sqlite.save(unique_keys=['record'], data={"name": "susan", "occupation": "software developer"})
+  scrapewiki.sqlite.save(unique_keys=['link'], data=record)
   print(match)
   print(lxml.html.tostring(match))
   
 #
 # # Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+scraperwiki.sqlite.save(unique_keys=['name'], data=record)
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
