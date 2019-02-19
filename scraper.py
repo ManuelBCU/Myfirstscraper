@@ -17,11 +17,13 @@ print(root.cssselect("div#footer"))
 print(root)
 listofmatches = root.cssselect("a")
 for match in listofmatches:
+  print(match)
+  print(lxml.html.tostring(match))
   record["link"] = lxml.html.tostring(match)
   print(record)
   scrapewiki.sqlite.save(unique_keys=['link'], data=record)
-  print(match)
-  print(lxml.html.tostring(match))
+  
+  
   
 #
 # # Write out to the sqlite database using scraperwiki library
