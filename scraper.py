@@ -21,13 +21,13 @@ for match in listofmatches:
   print(lxml.html.tostring(match))
   record["link"] = lxml.html.tostring(match)
   print(record)
-  scraperwiki.sqlite.save(unique_keys=['link'], data=record)
+  scraperwiki.sqlite.save(unique_keys=["link"], data=record)
   
   
   
 #
 # # Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=['name'], data=record)
+
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
